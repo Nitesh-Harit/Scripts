@@ -20,12 +20,12 @@ def write(new_yaml_data_dict):
 name  = 'allow-http-and-https'
 
 for i in range(1,10001):
-     kallu = kallu+'-'+str(i)
+     name = name+'-'+str(i)
      new_yaml_data_dict = {'kind': 'NetworkPolicy', 'apiVersion': 'networking.k8s.io/v1', 'metadata': {'name': name}, 'spec': {'podSelector': {'matchLabels': {'role': 'frontend'}}, 'ingress': [{'ports': [{'protocol': 'TCP', 'port': 80}, {'protocol': 'TCP', 'port': 443}]}]}}
      write(new_yaml_data_dict)
-     kallu = 'allow-http-and-https'
+     name = 'allow-http-and-https'
 
-#new_yaml_data_dict = {'kind': 'NetworkPolicy', 'apiVersion': 'networking.k8s.io/v1', 'metadata': {'name': kallu}, 'spec': {'podSelector': {'matchLabels': {'role': 'frontend'}}, 'ingress': [{'ports': [{'protocol': 'TCP', 'port': 80}, {'protocol': 'TCP', 'port': 443}]}]}}
+#new_yaml_data_dict = {'kind': 'NetworkPolicy', 'apiVersion': 'networking.k8s.io/v1', 'metadata': {'name': name}, 'spec': {'podSelector': {'matchLabels': {'role': 'frontend'}}, 'ingress': [{'ports': [{'protocol': 'TCP', 'port': 80}, {'protocol': 'TCP', 'port': 443}]}]}}
 #write(new_yaml_data_dict)
 '''
 import yaml
